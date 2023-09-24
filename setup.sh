@@ -17,7 +17,6 @@ echo "Installing Homebrew Formulas."
 brew install git fzf tor torsocks gnupg xz zstd lz4 curl jq ffmpeg openssh p7zip ssh-copy-id rsync just pinentry-mac lazygit lazydocker gh graphicsmagick tectonic typst pandoc yt-dlp aria2 zsh zsh-syntax-highlighting zsh-autosuggestions zsh-completions brew-cask-completion rustup-init go juliaup python pipx typescript node npm pnpm deno mat2 cmus
 brew services start tor
 $(brew --prefix)/opt/fzf/install
-colima start
 
 # brew casks
 echo "Installing Homebrew Casks."
@@ -36,13 +35,6 @@ rustup component add rust-analyzer
 mkdir $HOME/.zfunc
 rustup completions zsh > $HOME/.zfunc/_rustup
 rustup completions zsh cargo > ~/.zfunc/_cargo
-
-# Julia
-juliaup update
-juliaup add release
-julia --startup-file=no -e 'using Pkg; Pkg.add("Revise");'
-mkdir -p "$HOME/.julia/config/"
-echo 'using Revise' >>"$HOME/.julia/config/startup.jl"
 
 # SSH Keys
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519
