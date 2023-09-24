@@ -118,6 +118,14 @@ then
 fi
 export PATH
 
+# Brew completions
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
+
 # Zsh functions
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 fpath+=/opt/homebrew/share/zsh/site-functions
