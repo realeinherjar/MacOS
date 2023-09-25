@@ -2,18 +2,9 @@
 autoload -U colors && colors # Load colors
 autoload -U promptinit
 promptinit
-#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-PS1="%F{#73daca}%n%f@%F{#bb9af7}%M%f%F{#c0caf5}%B %~%b %f$ "
+PS1="%B%~$%b "
 stty stop undef # Disable ctrl-s to freeze terminal.
 setopt extendedglob
-# git integration
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-setopt prompt_subst
-RPROMPT='${vcs_info_msg_0_}'
-# PROMPT='${vcs_info_msg_0_}%# '
-zstyle ':vcs_info:git:*' formats '%F{#f7768e}%b'
 
 # History
 HISTSIZE=1000000
