@@ -35,16 +35,16 @@ bindkey "^[[1;3D" backward-word
 
 # User specific environment variables
 export EDITOR=hx
-export JULIA_NUM_THREADS=auto
 export GPG_TTY=$(tty)
 
 alias ls="ls -h --color=auto"
+alias g="git"
+alias lg="lazygit"
+alias ffmpeg="ffmpeg -hide_banner"
 alias yt="yt-dlp --add-metadata -i --format mp4 --restrict-filenames --sponsorblock-remove all"
 alias yta="yt -x -f bestaudio/best --format mp4 --audio-format opus --restrict-filenames --sponsorblock-remove all"
-alias ffmpeg="ffmpeg -hide_banner"
 alias myip="curl ipinfo.io/ip"
 alias testtor="curl -x socks5h://localhost:9050 -s https://check.torproject.org/api/ip"
-alias g="git"
 
 # Functions
 # fast parallel grep
