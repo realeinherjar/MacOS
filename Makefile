@@ -1,7 +1,9 @@
 install:
 	./install.sh
     @mkdir -p "$$HOME/.config"
+    @mkdir -p "$$HOME/.config/helix"
 	@mkdir -p "$$HOME/.gnuconf"
+    ln -sf "$(abspath helix.toml)" "$$HOME/.config/helix/config.toml"
     ln -sf "$(abspath gitconfig)" "$$HOME/.gitconfig"
     ln -sf "$(abspath gitignore)" "$$HOME/.gitignore"
 	ln -sf "$(abspath ssh_config)" "$$HOME/.ssh/config"
