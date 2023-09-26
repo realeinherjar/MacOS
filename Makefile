@@ -4,6 +4,7 @@ install:
     @mkdir -p "$$HOME/.config/helix"
 	@mkdir -p "$$HOME/.gnuconf"
     ln -sf "$(abspath helix.toml)" "$$HOME/.config/helix/config.toml"
+    ln -sf "$(abspath tmux.conf)" "$$HOME/.tmux.conf"
     ln -sf "$(abspath gitconfig)" "$$HOME/.gitconfig"
     ln -sf "$(abspath gitignore)" "$$HOME/.gitignore"
 	ln -sf "$(abspath ssh_config)" "$$HOME/.ssh/config"
