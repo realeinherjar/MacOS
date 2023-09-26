@@ -34,6 +34,7 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 
 # User specific environment variables
+export EDITOR=hx
 export JULIA_NUM_THREADS=auto
 export GPG_TTY=$(tty)
 
@@ -46,6 +47,12 @@ alias testtor="curl -x socks5h://localhost:9050 -s https://check.torproject.org/
 alias g="git"
 
 # Functions
+# fast parallel grep
+# needs GNU parallel
+# check out: https://stackoverflow.com/questions/9066609/fastest-possible-grep
+fastgrep(){
+	find . -type f | parallel -k -j150% -n 1000 -m grep --color=auto -H -n "$@" {}
+}
 einherjar() {
     git config core.sshCommand 'ssh -o IdentitiesOnly=yes -i ~/.ssh/id_einherjar -F /dev/null'
     git config user.signingKey '0xE7ED7E35F072CA83!'
@@ -106,6 +113,11 @@ fi
 if ! [[ "$PATH" =~ "/opt/homebrew/sbin:" ]]
 then
     PATH="/opt/homebrew/sbin:$PATH"
+fi
+# LLVM
+if ! [[ "$PATH" =~ "/opt/homebrew/opt/llvm/bin:" ]]
+then
+    PATH="/opt/homebrew/opt/llvm/bin:$PATH"
 fi
 export PATH
 
