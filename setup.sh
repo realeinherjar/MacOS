@@ -14,13 +14,96 @@ brew analytics off
 
 # brew formulas
 echo "Installing Homebrew Formulas."
-brew install git tree fzf fd ripgrep parallel tmux helix tor torsocks gnupg xz zstd lz4 curl jq ffmpeg openssh p7zip ssh-copy-id rsync just pinentry-mac lazygit lazydocker gh graphicsmagick tectonic typst pandoc yt-dlp aria2 zsh zsh-syntax-highlighting zsh-autosuggestions zsh-completions brew-cask-completion rustup-init go python llvm pipx typescript node npm pnpm marksman deno mat2 cmus
+brew install \
+	# dev
+	git \
+	tree \
+	fzf \
+	fd \
+	ripgrep \
+	parallel \
+	tmux \
+	gnupg \
+	xz \
+	zstd \
+	lz4 \
+	curl \
+	jq \
+	ffmpeg \
+	openssh \
+	p7zip \
+	ssh-copy-id \
+	rsync \
+	just \
+	pinentry-mac \
+	lazygit \
+	lazydocker \
+	gh \
+	# tor
+	tor \
+	torsocks \
+	# zsh
+	zsh \
+	zsh-syntax-highlighting \
+	zsh-autosuggestions \
+	zsh-completions \
+	brew-cask-completion \
+	# misc
+	graphicsmagick \
+	tectonic \
+	typst \
+	pandoc \
+	yt-dlp \
+	aria2 \
+	# programming
+	rustup-init \
+	go \
+	python \
+	llvm \
+	pipx \
+	typescript \
+	node \
+	npm \
+	pnpm \
+	# editor/LSPs
+	helix \
+	marksman \
+	deno \
+	mat2 \
+	cmus \
+	ruff \
+	ruff-lsp \
+	black \
+	yaml-language-server \
+	bash-language-server \
+	taplo
 brew services start tor
 $(brew --prefix)/opt/fzf/install
 
 # brew casks
 echo "Installing Homebrew Casks."
-brew install --cask signal tor-browser brave-browser visual-studio-code utm stats obs iina docker protonvpn cryptomator sparrow bisq android-file-transfer transmission zsa-wally balenaetcher postman inkscape dangerzone exifcleaner
+brew install --cask \
+  signal \
+	tor-browser \
+	brave-browser \
+	visual-studio-code \
+	utm \
+	stats \
+	obs \
+	iina \
+	docker \
+	protonvpn \
+	cryptomator \
+	sparrow \
+	bisq \
+	android-file-transfer \
+	transmission \
+	zsa-wally \
+	balenaetcher \
+	postman \
+	inkscape \
+	dangerzone \
+	exifcleaner
 # Cryptomator uses FUSE-T
 brew tap macos-fuse-t/homebrew-cask
 brew install fuse-t
