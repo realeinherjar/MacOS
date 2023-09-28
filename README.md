@@ -1,5 +1,10 @@
 # MacOS Developer Setup
 
+ARCHIVED:
+Brew is a shitcoin.
+Moved to Nix.
+Check: [`realeinherjar/flakes-darwin`](https://github.com/realeinherjar/flakes-darwin).
+
 Just run `make install` and profit!
 
 > Don't forget to check the [MacOS Hardening Guide](https://github.com/ataumo/macos_hardening)
